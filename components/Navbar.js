@@ -21,7 +21,7 @@ export default function Navbar() {
 
   return (
     <div>
-      <nav className="flex items-center flex-wrap bg-red-200 hover:bg-red-300 p-3 ">
+      <nav style={{backgroundColor: '#fffef4'}} className="flex items-center flex-wrap p-3 ">
         <div className="grid grid-flow-row auto-rows-max">
           <Link href="/">
             <a className="inline-flex p-3 mr-4 ">
@@ -64,25 +64,25 @@ export default function Navbar() {
           }   w-full lg:inline-flex lg:flex-grow lg:w-auto`}
         >
           <div className="lg:inline-flex lg:flex-row lg:ml-auto lg:w-auto w-full lg:items-center items-start  flex flex-col lg:h-auto">
-            <div className="grid grid-flow-row auto-rows-max">
-              <div>
+            <div style={{marginLeft: '10px', padding:'10px'}} className="grid grid-flow-row auto-rows-max">
+              <div style={{padding: '10px'}}>
                 <Link href="/">
-                  <a className="lg:inline-flex lg:w-auto w-full px-3 py-2 rounded text-white font-bold items-center justify-center hover:bg-white-600 hover:text-white ">
+                  <a className="lg:inline-flex lg:w-auto w-full px-3 py-2 rounded text-black font-bold items-center justify-center hover:bg-white-600 hover:text-white ">
                     <InstagramIcon />
                   </a>
                 </Link>
                 <Link href="/">
-                  <a className="lg:inline-flex lg:w-auto w-full px-3 py-2 rounded text-white font-bold items-center justify-center hover:bg-white-600 hover:text-white">
+                  <a className="lg:inline-flex lg:w-auto w-full px-3 py-2 rounded text-black font-bold items-center justify-center hover:bg-white-600 hover:text-white">
                     <FacebookIcon />
                   </a>
                 </Link>
                 <Link href="/">
-                  <a className="lg:inline-flex lg:w-auto w-full px-3 py-2 rounded text-white font-bold items-center justify-center hover:bg-white-600 hover:text-white">
+                  <a className="lg:inline-flex lg:w-auto w-full px-3 py-2 rounded text-black font-bold items-center justify-center hover:bg-white-600 hover:text-white">
                     <TwitterIcon />
                   </a>
                 </Link>
                 <Link href="/">
-                  <a className="lg:inline-flex lg:w-auto w-full px-3 py-2 rounded text-white font-bold items-center justify-center hover:bg-white-600 hover:text-white">
+                  <a className="lg:inline-flex lg:w-auto w-full px-3 py-2 rounded text-black font-bold items-center justify-center hover:bg-white-600 hover:text-white">
                     <PinterestIcon />
                   </a>
                 </Link>

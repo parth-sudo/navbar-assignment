@@ -30,49 +30,71 @@ const Dropdown = ({ color, headliner }) => {
           <div className="relative inline-flex align-middle w-full">
             <button
               className={
-                "text-black font-bold lowercase text-sm px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150 " +
+                "text-black font-bold lowercase text-sm px-6 py-3 hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150 " +
                 bgColor
               }
               type="button"
               ref={btnDropdownRef}
-              onClick={() => {
+              onMouseEnter={() => {
                 dropdownPopoverShow
                   ? closeDropdownPopover()
-                  : openDropdownPopover();
+                  : openDropdownPopover()
               }}
             >
               {headliner}
             </button>
-
-            {/* <Items dropdownPopoverShow={dropdownPopoverShow} popoverDropdownRef={popoverDropdownRef} color={color}/> */}
 
             <div
               ref={popoverDropdownRef}
               className={
                 (dropdownPopoverShow ? "block " : "hidden ") +
                 (color === "white" ? "bg-white " : bgColor + " ") +
-                "bg-red-200 hover:bg-red-300  text-base z-50 float-left py-2 list-none text-left rounded shadow-lg mt-1"
+                "bg-red-200 hover:bg-red-300  text-base z-50 float-left py-2 list-none text-left rounded shadow-lg mt-1 dropdown"
               }
-              style={{ minWidth: "12rem" }}
+      
+              style={{ minWidth: "80vw", backgroundColor: '#fffef4', transform: 'translate(-20px, 60px)'}} 
+              onMouseEnter={() => {
+                !dropdownPopoverShow
+                  ? closeDropdownPopover()
+                  : openDropdownPopover()
+              }}
+               onMouseLeave = {() => {
+                return closeDropdownPopover();
+              }}
             >
-              <div className="flex justify-between flex-grow">
-                <Items color={color} />
-
-                <div>
-                  <Items2 color={color} />
+              <div className="col-span-2 pt-8 pb-28  grid grid-cols-4">
+                <div style={{marginLeft: '7px'}}><h1 className="heading-lg text-black font-bold">Skin Type</h1>
+                  <div className="heading-sm-lite mt-6 cursor-pointer">All Skin Types</div>
+                  <div className="heading-sm-lite mt-6 cursor-pointer">Combination Skin</div>
+                  <div className="heading-sm-lite mt-6 cursor-pointer">Dry Skin</div>
+                  <div className="heading-sm-lite mt-6 cursor-pointer">Oily Skin</div>
+                  <div className="heading-sm-lite mt-6 cursor-pointer">Normal Skin</div>
+                  <div className="heading-sm-lite mt-6 cursor-pointer">Sensitive Skin</div>
                 </div>
-
-                <div>
-                  <p className="text-l font-sans font-bold max-w-prose">
-                    Natural Skincare Products
-                    <img
+                
+                <div><h1 className="heading-lg text-black font-bold">Skin Goals</h1>
+                  <div className="heading-sm-lite mt-6 cursor-pointer">Acne & Blemishes</div>
+                  <div className="heading-sm-lite mt-6 cursor-pointer">Brightening & Glow</div>
+                  <div className="heading-sm-lite mt-6 cursor-pointer">Acne and Scars</div>
+                  <div className="heading-sm-lite mt-6 cursor-pointer">Hair Strength</div>
+                  <div className="heading-sm-lite mt-6 cursor-pointer">Anti Aging</div>
+                  <div className="heading-sm-lite mt-6 cursor-pointer">Skin Glow</div>
+                </div>
+                
+                <div><h1 className="heading-lg text-black font-bold">Product Type</h1>
+                  <div className="heading-sm-lite mt-6 cursor-pointer">Face Mist</div>
+                  <div className="heading-sm-lite mt-6 cursor-pointer">Face Wash</div>
+                  <div className="heading-sm-lite mt-6 cursor-pointer">Face Serum</div>
+    
+                </div>
+                <img
                       src="https://media.allure.com/photos/5e9f44d3286b260008a65be5/16:9/w_2560%2Cc_limit/reporter-wild-beauty-social.jpg"
                       alt="products"
-               
+                      style={{width: "300px", height: "300px"}}
                     />
-                  </p>
-                </div>
               </div>
+         
+
             </div>
           </div>
         </div>
