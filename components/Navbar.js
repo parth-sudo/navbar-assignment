@@ -1,101 +1,112 @@
-import React from 'react'
-import Link from 'next/link';
-import { useState } from 'react';
-import Dropdown from './Dropdown.js';
-import FacebookIcon from '@material-ui/icons/Facebook';
-import InstagramIcon from '@material-ui/icons/Instagram';
-import TwitterIcon from '@material-ui/icons/Twitter';
-import PinterestIcon from '@material-ui/icons/Pinterest';
+import React from "react";
+import Link from "next/link";
+import { useState } from "react";
+import Dropdown from "./Dropdown.js";
+import FacebookIcon from "@material-ui/icons/Facebook";
+import InstagramIcon from "@material-ui/icons/Instagram";
+import TwitterIcon from "@material-ui/icons/Twitter";
+import PinterestIcon from "@material-ui/icons/Pinterest";
+import SearchIcon from "@material-ui/icons/Search";
+import FavoriteBorderIcon from "@material-ui/icons/FavoriteBorder";
+import StoreIcon from "@material-ui/icons/Store";
+import PersonIcon from "@material-ui/icons/Person";
 
 export default function Navbar() {
-  
-const [active, setActive] = useState(false);
+  const [active, setActive] = useState(false);
 
-const handleClick = () => {
+  const handleClick = () => {
     console.log(active);
-setActive(!active);
-};
+    setActive(!active);
+  };
 
-return (
-  <div>
-    <nav className='flex items-center flex-wrap bg-blue-300 p-3 '>
-    <div className="grid grid-flow-row auto-rows-max">
-      <Link href='/'>
-        <a className='inline-flex items-center p-2 mr-4 '>
-          {/* <svg
-            viewBox='0 0 24 24'
-            xmlns='http://www.w3.org/2000/svg'
-            className='fill-current text-white h-8 w-8 mr-2'
-          >
-            <path d='M12.001 4.8c-3.2 0-5.2 1.6-6 4.8 1.2-1.6 2.6-2.2 4.2-1.8.913.228 1.565.89 2.288 1.624C13.666 10.618 15.027 12 18.001 12c3.2 0 5.2-1.6 6-4.8-1.2 1.6-2.6 2.2-4.2 1.8-.913-.228-1.565-.89-2.288-1.624C16.337 6.182 14.976 4.8 12.001 4.8zm-6 7.2c-3.2 0-5.2 1.6-6 4.8 1.2-1.6 2.6-2.2 4.2-1.8.913.228 1.565.89 2.288 1.624 1.177 1.194 2.538 2.576 5.512 2.576 3.2 0 5.2-1.6 6-4.8-1.2 1.6-2.6 2.2-4.2 1.8-.913-.228-1.565-.89-2.288-1.624C10.337 13.382 8.976 12 6.001 12z' />
-          </svg> */}
-          <span className='text-xl text-white font-bold uppercase tracking-wide'>
-            bio:cule
-          </span>
+  return (
+    <div>
+      <nav className="flex items-center flex-wrap bg-red-200 hover:bg-red-300 p-3 ">
+        <div className="grid grid-flow-row auto-rows-max">
+          <Link href="/">
+            <a className="inline-flex p-3 mr-4 ">
+              <span className="text-3xl text-black font-bold lowercase tracking-wide">
+                bio:cule
+              </span>
+            </a>
+          </Link>
 
-        </a>
-      </Link>
-     
-     <div className="grid grid-flow-col auto-cols-max"> 
-      <Dropdown text="skincare"/>
-      <Dropdown text="bio:edge"/>
-      <Dropdown text="blogs"/>
-      </div>
-    </div>
-
-      <button
-        className=' inline-flex p-3 hover:bg-green-600 rounded lg:hidden text-white ml-auto hover:text-white outline-none'
-        onClick={handleClick}
-      >
-        <svg
-          className='w-6 h-6'
-          fill='none'
-          stroke='currentColor'
-          viewBox='0 0 24 24'
-          xmlns='http://www.w3.org/2000/svg'
-        >
-          <path
-            strokeLinecap='round'
-            strokeLinejoin='round'
-            strokeWidth={2}
-            d='M4 6h16M4 12h16M4 18h16'
-          />
-        </svg>
-      </button>
-      {/*Note that in this div we will use a ternary operator to decide whether or not to display the content of the div  */}
-      <div
-        className={`${
-          active ? '' : 'hidden'
-        }   w-full lg:inline-flex lg:flex-grow lg:w-auto`}
-      >
-        <div className='lg:inline-flex lg:flex-row lg:ml-auto lg:w-auto w-full lg:items-center items-start  flex flex-col lg:h-auto'>
-          <Link href='/'>
-            <a className='lg:inline-flex lg:w-auto w-full px-3 py-2 rounded text-white font-bold items-center justify-center hover:bg-white-600 hover:text-white '>
-            
-              <InstagramIcon/>
-            </a>
-          </Link>
-          <Link href='/'>
-            <a className='lg:inline-flex lg:w-auto w-full px-3 py-2 rounded text-white font-bold items-center justify-center hover:bg-white-600 hover:text-white'>
-            <FacebookIcon/>
-            </a>
-          </Link>
-          <Link href='/'>
-            <a className='lg:inline-flex lg:w-auto w-full px-3 py-2 rounded text-white font-bold items-center justify-center hover:bg-white-600 hover:text-white'>
-            <TwitterIcon/>
-            </a>
-          </Link>
-          <Link href='/'>
-            <a className='lg:inline-flex lg:w-auto w-full px-3 py-2 rounded text-white font-bold items-center justify-center hover:bg-white-600 hover:text-white'>
-              <PinterestIcon/>
-            </a>
-          </Link>
+          <div className="grid grid-flow-col auto-cols-max">
+            <Dropdown text="skin:care" />
+            <Dropdown text="bio:edge" />
+            <Dropdown text="b:logs" />
+          </div>
         </div>
-      </div>
 
-    </nav>
+        <button
+          className=" inline-flex p-3 rounded lg:hidden text-white ml-auto hover:text-white outline-none"
+          onClick={handleClick}
+        >
+          <svg
+            className="w-6 h-6"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth={2}
+              d="M4 6h16M4 12h16M4 18h16"
+            />
+          </svg>
+        </button>
+        {/*Note that in this div we will use a ternary operator to decide whether or not to display the content of the div  */}
+        <div
+          className={`${
+            active ? "" : "hidden"
+          }   w-full lg:inline-flex lg:flex-grow lg:w-auto`}
+        >
+          <div className="lg:inline-flex lg:flex-row lg:ml-auto lg:w-auto w-full lg:items-center items-start  flex flex-col lg:h-auto">
+            <div className="grid grid-flow-row auto-rows-max">
+              <div>
+                <Link href="/">
+                  <a className="lg:inline-flex lg:w-auto w-full px-3 py-2 rounded text-white font-bold items-center justify-center hover:bg-white-600 hover:text-white ">
+                    <InstagramIcon />
+                  </a>
+                </Link>
+                <Link href="/">
+                  <a className="lg:inline-flex lg:w-auto w-full px-3 py-2 rounded text-white font-bold items-center justify-center hover:bg-white-600 hover:text-white">
+                    <FacebookIcon />
+                  </a>
+                </Link>
+                <Link href="/">
+                  <a className="lg:inline-flex lg:w-auto w-full px-3 py-2 rounded text-white font-bold items-center justify-center hover:bg-white-600 hover:text-white">
+                    <TwitterIcon />
+                  </a>
+                </Link>
+                <Link href="/">
+                  <a className="lg:inline-flex lg:w-auto w-full px-3 py-2 rounded text-white font-bold items-center justify-center hover:bg-white-600 hover:text-white">
+                    <PinterestIcon />
+                  </a>
+                </Link>
+              </div>
 
+              <div>
+                <a className="lg:inline-flex lg:w-auto w-full px-3 py-2 rounded text-black font-bold items-center justify-center hover:bg-white-600 hover:text-white">
+                  <SearchIcon />
+                </a>
+                <a className="lg:inline-flex lg:w-auto w-full px-3 py-2 rounded text-black font-bold items-center justify-center hover:bg-white-600 hover:text-white">
+                  <FavoriteBorderIcon />
+                </a>
+                <a className="lg:inline-flex lg:w-auto w-full px-3 py-2 rounded text-black font-bold items-center justify-center hover:bg-white-600 hover:text-white">
+                  <PersonIcon />
+                </a>
+
+                <a className="lg:inline-flex lg:w-auto w-full px-3 py-2 rounded text-black font-bold items-center justify-center hover:bg-white-600 hover:text-white">
+                  <StoreIcon />
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
     </div>
-
-    )
-};
+  );
+}

@@ -1,6 +1,7 @@
 import React from "react";
 import { createPopper } from "@popperjs/core";
-import Items from './Items.js';
+import Items from "./Items.js";
+import Items2 from "./Items2.js";
 
 const Dropdown = ({ color, headliner }) => {
   // dropdown props
@@ -44,81 +45,35 @@ const Dropdown = ({ color, headliner }) => {
             </button>
 
             {/* <Items dropdownPopoverShow={dropdownPopoverShow} popoverDropdownRef={popoverDropdownRef} color={color}/> */}
-               
+
             <div
               ref={popoverDropdownRef}
               className={
                 (dropdownPopoverShow ? "block " : "hidden ") +
                 (color === "white" ? "bg-white " : bgColor + " ") +
-                "text-base z-50 float-left py-2 list-none text-left rounded shadow-lg mt-1"
+                "bg-red-200 hover:bg-red-300  text-base z-50 float-left py-2 list-none text-left rounded shadow-lg mt-1"
               }
               style={{ minWidth: "12rem" }}
-            > 
-            <div class="grid grid-flow-col grid-cols-3 grid-rows-3 gap-4">
-                   
-            <div> 
-              <a
-                href="#"
-                className={
-                  "text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent " +
-                  (color === "white" ? " text-blueGray-700" : "text-white")
-                }
-                onClick={(e) => e.preventDefault()}
-              >
-                Action
-              </a>
-              <a
-                href="#"
-                className={
-                  "text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent " +
-                  (color === "white" ? " text-blueGray-700" : "text-white")
-                }
-                onClick={(e) => e.preventDefault()}
-              >
-                Another action
-              </a>
-              <a
-                href="#"
-                className={
-                  "text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent " +
-                  (color === "white" ? " text-blueGray-700" : "text-white")
-                }
-                onClick={(e) => e.preventDefault()}
-              >
-                Something else here
-              </a>
-             
-              </div>
-              {/* end first column here */}
+            >
+              <div className="flex justify-between flex-grow">
+                <Items color={color} />
 
-              <div />
-              <a
-                href="#"
-                className={
-                  "text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent " +
-                  (color === "white" ? " text-blueGray-700" : "text-white")
-                }
-                onClick={(e) => e.preventDefault()}
-              >
-                Seprated link
-              </a>
+                <div>
+                  <Items2 color={color} />
+                </div>
 
-              <a
-                href="#"
-                className={
-                  "text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent " +
-                  (color === "white" ? " text-blueGray-700" : "text-white")
-                }
-                onClick={(e) => e.preventDefault()}
-              >
-                Seprated link
-              </a>
-              
-              {/* end second column here */}
-              
+                <div>
+                  <p className="text-l font-sans font-bold max-w-prose">
+                    Natural Skincare Products
+                    <img
+                      src="https://media.allure.com/photos/5e9f44d3286b260008a65be5/16:9/w_2560%2Cc_limit/reporter-wild-beauty-social.jpg"
+                      alt="products"
+               
+                    />
+                  </p>
+                </div>
               </div>
             </div>
-
           </div>
         </div>
       </div>
