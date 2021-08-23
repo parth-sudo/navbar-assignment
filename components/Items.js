@@ -1,68 +1,13 @@
-import React from "react";
+export const column1 = [
+  'All Skin Types', 'Combination Skin', 'Dry Skin', 'Oily Skin', 'Normal Skin',
+  'Sensitive Skin'
+]
 
-export default function Items({ color }) {
-  return (
-    <div>
-      <a
-        href="#"
-        className={
-          "text-bold py-2 px-4 font-extrabold font-sans md:font-serif block w-full whitespace-nowrap bg-transparent " +
-          (color === "white" ? " text-blueGray-700" : "text-white")
-        }
-      >
-        Skin Type
-      </a>
+export const column2 = [
+  'Skin Goals', 'Acne & Blemishes', 'Brightening & Glow',
+  'Acne and Scars', 'Hair Strength', 'Anti Aging', 'Skin Glow'
+]
 
-      <a
-        href="#"
-        className={
-          "text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent " +
-          (color === "white" ? " text-blueGray-700" : "text-white")
-        }
-      >
-        All Skin Type
-      </a>
-
-      <a
-        href="#"
-        className={
-          "text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent " +
-          (color === "white" ? " text-blueGray-700" : "text-white")
-        }
-      >
-        Combination Skin
-      </a>
-
-      <a
-        href="#"
-        className={
-          "text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent " +
-          (color === "white" ? " text-blueGray-700" : "text-white")
-        }
-      >
-        Dry Skin
-      </a>
-
-      <a
-        href="#"
-        className={
-          "text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent " +
-          (color === "white" ? " text-blueGray-700" : "text-white")
-        }
-        onClick={(e) => e.preventDefault()}
-      >
-        Oily Skin
-      </a>
-      <a
-        href="#"
-        className={
-          "text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent " +
-          (color === "white" ? " text-blueGray-700" : "text-white")
-        }
-        onClick={(e) => e.preventDefault()}
-      >
-        Sensitive Skin
-      </a>
-    </div>
-  );
-}
+export const column3 = [
+  'Product Type', 'Face Mist', 'Face Wash', 'Face Serum',
+]

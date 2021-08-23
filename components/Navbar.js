@@ -20,12 +20,12 @@ export default function Navbar() {
   };
 
   return (
-    <div>
-      <nav style={{backgroundColor: '#fffef4'}} className="flex items-center flex-wrap p-3 ">
+    <div className="">
+      <nav  className="flex items-center flex-wrap p-3 bg-cream-light">
         <div className="grid grid-flow-row auto-rows-max">
           <Link href="/">
             <a className="inline-flex p-3 mr-4 ">
-              <span className="text-3xl text-black font-bold lowercase tracking-wide">
+              <span className="sm:ml-6 text-5xl text-black font-bold lowercase tracking-wide text-center">
                 bio:cule
               </span>
             </a>
@@ -57,7 +57,7 @@ export default function Navbar() {
             />
           </svg>
         </button>
-        {/*Note that in this div we will use a ternary operator to decide whether or not to display the content of the div  */}
+        
         <div
           className={`${
             active ? "" : "hidden"

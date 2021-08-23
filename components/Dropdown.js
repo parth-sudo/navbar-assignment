@@ -1,11 +1,12 @@
 import React from "react";
 import { createPopper } from "@popperjs/core";
-import Items from "./Items.js";
-import Items2 from "./Items2.js";
+import { column1, column2, column3 } from "./Items.js";
 
 const Dropdown = ({ color, headliner }) => {
   // dropdown props
+
   const [dropdownPopoverShow, setDropdownPopoverShow] = React.useState(false);
+
   const btnDropdownRef = React.createRef();
   const popoverDropdownRef = React.createRef();
 
@@ -19,10 +20,8 @@ const Dropdown = ({ color, headliner }) => {
     setDropdownPopoverShow(false);
   };
   // bg colors
-  let bgColor;
-  color === "white"
-    ? (bgColor = "bg-blueGray-700")
-    : (bgColor = "bg-" + color + "-500");
+  let bgColor = "bg-blueGray-700";
+
   return (
     <>
       <div className="flex flex-wrap">
@@ -30,7 +29,7 @@ const Dropdown = ({ color, headliner }) => {
           <div className="relative inline-flex align-middle w-full">
             <button
               className={
-                "text-black font-bold lowercase text-sm px-6 py-3 hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150 " +
+                "text-black font-bold lowercase text-xl px-6 py-3 transition delay-150 duration-300 ease-in-out hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150" +
                 bgColor
               }
               type="button"
@@ -38,7 +37,13 @@ const Dropdown = ({ color, headliner }) => {
               onMouseEnter={() => {
                 dropdownPopoverShow
                   ? closeDropdownPopover()
-                  : openDropdownPopover()
+                  : openDropdownPopover();
+              }}
+              onClick={() =>{
+                dropdownPopoverShow
+                ? closeDropdownPopover()
+                : openDropdownPopover();
+
               }}
             >
               {headliner}
@@ -48,53 +53,68 @@ const Dropdown = ({ color, headliner }) => {
               ref={popoverDropdownRef}
               className={
                 (dropdownPopoverShow ? "block " : "hidden ") +
-                (color === "white" ? "bg-white " : bgColor + " ") +
-                "bg-red-200 hover:bg-red-300  text-base z-50 float-left py-2 list-none text-left rounded shadow-lg mt-1 dropdown"
+                "bg-cream-light text-base z-50 float-left py-2 list-none text-left rounded shadow-lg mt-1 dropdown mega-menu text-black"
               }
-      
-              style={{ minWidth: "80vw", backgroundColor: '#fffef4', transform: 'translate(-20px, 60px)'}} 
+              style={{
+                minWidth: "95vw",
+                transition: "0.3s",
+                transform: "translate(-20px, 60px)",
+              }}
               onMouseEnter={() => {
                 !dropdownPopoverShow
                   ? closeDropdownPopover()
-                  : openDropdownPopover()
+                  : openDropdownPopover();
               }}
-               onMouseLeave = {() => {
+              onMouseLeave={() => {
                 return closeDropdownPopover();
               }}
             >
-              <div className="col-span-2 pt-8 pb-28  grid grid-cols-4">
-                <div style={{marginLeft: '7px'}}><h1 className="heading-lg text-black font-bold">Skin Type</h1>
-                  <div className="heading-sm-lite mt-6 cursor-pointer">All Skin Types</div>
-                  <div className="heading-sm-lite mt-6 cursor-pointer">Combination Skin</div>
-                  <div className="heading-sm-lite mt-6 cursor-pointer">Dry Skin</div>
-                  <div className="heading-sm-lite mt-6 cursor-pointer">Oily Skin</div>
-                  <div className="heading-sm-lite mt-6 cursor-pointer">Normal Skin</div>
-                  <div className="heading-sm-lite mt-6 cursor-pointer">Sensitive Skin</div>
+              <div className="col-span-2 pt-8 pb-28  grid grid-cols-4 flex justify-center animate-fade-in-down">
+                <div style={{ marginLeft: "7px" }}>
+                  <h1 className="heading-lg ml-6 text-black font-bold">
+                    Skin Type
+                  </h1>
+
+                  {column1.map((item) => {
+                    return (
+                      <div className="heading-sm-lite mt-6 ml-6 cursor-pointer">
+                        {item}
+                      </div>
+                    );
+                  })}
                 </div>
-                
-                <div><h1 className="heading-lg text-black font-bold">Skin Goals</h1>
-                  <div className="heading-sm-lite mt-6 cursor-pointer">Acne & Blemishes</div>
-                  <div className="heading-sm-lite mt-6 cursor-pointer">Brightening & Glow</div>
-                  <div className="heading-sm-lite mt-6 cursor-pointer">Acne and Scars</div>
-                  <div className="heading-sm-lite mt-6 cursor-pointer">Hair Strength</div>
-                  <div className="heading-sm-lite mt-6 cursor-pointer">Anti Aging</div>
-                  <div className="heading-sm-lite mt-6 cursor-pointer">Skin Glow</div>
+
+                <div>
+                  <h1 className="heading-lg text-black font-bold">
+                    Skin Goals
+                  </h1>
+                  {column2.map((item) => {
+                    return (
+                      <div className="heading-sm-lite mt-6 cursor-pointer">
+                        {item}
+                      </div>
+                    );
+                  })}
                 </div>
-                
-                <div><h1 className="heading-lg text-black font-bold">Product Type</h1>
-                  <div className="heading-sm-lite mt-6 cursor-pointer">Face Mist</div>
-                  <div className="heading-sm-lite mt-6 cursor-pointer">Face Wash</div>
-                  <div className="heading-sm-lite mt-6 cursor-pointer">Face Serum</div>
-    
+
+                <div>
+                  <h1 className="heading-lg text-black font-bold">
+                    Product Type
+                  </h1>
+                  {column3.map((item) => {
+                    return (
+                      <div className="heading-sm-lite mt-6 cursor-pointer">
+                        {item}
+                      </div>
+                    );
+                  })}
                 </div>
                 <img
-                      src="https://media.allure.com/photos/5e9f44d3286b260008a65be5/16:9/w_2560%2Cc_limit/reporter-wild-beauty-social.jpg"
-                      alt="products"
-                      style={{width: "300px", height: "300px"}}
-                    />
+                  src="https://media.allure.com/photos/5e9f44d3286b260008a65be5/16:9/w_2560%2Cc_limit/reporter-wild-beauty-social.jpg"
+                  alt="products"
+                  style={{ width: "300px", height: "300px" }}
+                />
               </div>
-         
-
             </div>
           </div>
         </div>
