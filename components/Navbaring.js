@@ -83,7 +83,7 @@ function Navbaring() {
             <Dropdown text="bio:edge" />
             <Dropdown text="b:logs" />
                 
-            {/* <Icons/>     */}
+            <Icons/>    
         
               </div>
             </div>

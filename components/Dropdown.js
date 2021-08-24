@@ -27,9 +27,10 @@ const Dropdown = ({ color, headliner }) => {
       <div className="flex flex-wrap">
         <div className="w-full sm:w-6/12 md:w-4/12 px-4">
           <div className="relative inline-flex align-middle w-full">
+
             <button
               className={
-                "text-black font-bold lowercase text-xl px-6 py-3 transition delay-150 duration-300 ease-in-out hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150" +
+                " text-black font-bold lowercase text-xl px-6 py-3 transition delay-150 duration-300 ease-in-out hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150 false link-lg cursor-pointer border-transparent border-b group-hover:border-black pb-2" +
                 bgColor
               }
               type="button"
