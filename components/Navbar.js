@@ -16,7 +16,7 @@ export default function Navbar() {
   return (
     <div className="">
       
-      <nav  className="flex items-center flex-wrap p-3 bg-cream-light">
+      <nav style={{width: '100vw'}} className="flex items-center flex-wrap p-3 bg-cream-light">
         <div className="grid grid-flow-row auto-rows-max">
           <Link href="/">
             <a className="inline-flex p-3 mr-4 ">
